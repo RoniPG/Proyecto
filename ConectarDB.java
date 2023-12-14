@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // @author roni
 import java.sql.DriverManager;
 import java.sql.Connection;
@@ -94,4 +93,3 @@ public class ConectarDB {
     } 
      
 }
->>>>>>> c2330773fed2bd1051afbb6ca3c1a32312e47be8
