@@ -10,7 +10,7 @@ public class ConectarDB {
     private static final String user="admin";
     private static final String password="t$PaTd9c";
     private static final String database="database-1";
-    private static final String url="jdbc:mysql://database-1.cohdyzxtkf0t.eu-west-3.rds.amazonaws.com:3306/"+database;
+    private static final String url="jdbc:mysql://database-1.cplm5hfv9nvv.eu-south-2.rds.amazonaws.com:3306/";
     //Llamada al constructor(vacio) para realizar la conexion
     public ConectarDB(){
         conn= null;
@@ -20,8 +20,8 @@ public class ConectarDB {
             conn = DriverManager.getConnection(url, user, password);
             //Condicional en donde se informara al usuario de la correcta coneccion a dicha base
             if(conn!=null){
-               //System.out.println("-------------------------------------------------");                
-               //System.out.println("Conectado a la base de datos: "+database);
+               System.out.println("-------------------------------------------------");                
+               System.out.println("Conectado a la base de datos: "+database);
             }
         //Captacion de errores durante la conexion.
         }catch(ClassNotFoundException | SQLException e){
@@ -35,8 +35,8 @@ public class ConectarDB {
             try {
                 //Cerramos la conexion y se lo indicamos al usuario
                 conn.close();
-                //System.out.println("-------------------------------------------------");                
-                //System.out.println("Desconectado de la base de datos: "+database);
+                System.out.println("-------------------------------------------------");                
+                System.out.println("Desconectado de la base de datos: "+database);
             //Captacion de errores durante la desconexion.
             } catch (SQLException e) {
                 System.out.println("Error al desconectar "+e);
