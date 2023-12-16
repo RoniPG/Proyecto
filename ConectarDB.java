@@ -7,10 +7,10 @@ public class ConectarDB {
 	//Atributos de la clase necesaria para realizar la conexion.
     private static Connection conn;
     private static final String driver="com.mysql.cj.jdbc.Driver";
-    private static final String user="root";
-    private static final String password="";
-    private static final String database="usuarios";
-    private static final String url="jdbc:mysql://localhost:3306/"+database;
+    private static final String user="admin";
+    private static final String password="t$PaTd9c";
+    private static final String database="database-1";
+    private static final String url="jdbc:mysql://database-1.cohdyzxtkf0t.eu-west-3.rds.amazonaws.com:3306/"+database;
     //Llamada al constructor(vacio) para realizar la conexion
     public ConectarDB(){
         conn= null;
