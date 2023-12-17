@@ -1,4 +1,6 @@
 // @author roni
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,8 +11,8 @@ public class ConectarDB {
     private static final String driver="com.mysql.cj.jdbc.Driver";
     private static final String user="admin";
     private static final String password="t$PaTd9c";
-    private static final String database="database-1";
-    private static final String url="jdbc:mysql://database-1.cplm5hfv9nvv.eu-south-2.rds.amazonaws.com:3306/";
+    private static final String database="App";
+    private static final String url="jdbc:mysql://database-1.cplm5hfv9nvv.eu-south-2.rds.amazonaws.com:3306/"+database;
     //Llamada al constructor(vacio) para realizar la conexion
     public ConectarDB(){
         conn= null;
@@ -28,6 +30,22 @@ public class ConectarDB {
             System.out.println("Error al conectar "+e);
         }
     }
+    /*Es un metodo para poder ver que tablas hay creadas dentro de la Baser de Datos
+    public void verTablas(){
+        Statement st = null;
+        try{
+        st = (Statement) conn.createStatement();
+        String sql = "SHOW TABLES";
+        ResultSet rs= null;
+        rs=st.executeQuery(sql);
+        while (rs.next()) {   
+            String tablename = rs.getString(1);
+            System.out.println(tablename);
+        }
+        }catch (SQLException e){
+        System.out.println("Error al conectar "+e);
+        }
+    }*/
     //Funcion implementada para la desconexion de la base de datos
     public void desconectar(){
         //Condicional en donde se comprueba si hay alguna conexion activa
